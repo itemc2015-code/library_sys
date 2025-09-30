@@ -8,7 +8,8 @@ mysqldb = mysql.connector.connect(
 )
 mysql_cursor = mysqldb.cursor()
 
-c_db = ("show tables")
+c_db = ("show databases")
+
 mysql_cursor.execute(c_db)
 
 for l in mysql_cursor:
