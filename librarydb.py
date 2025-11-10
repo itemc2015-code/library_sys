@@ -78,3 +78,37 @@ class Actions(Operate):
         cursor.close()
         db.close()
         return result
+    def update_to_available(self,book_id):
+        db.ping(reconnect=True)
+        cursor = db.cursor(dictionary=True,buffered=True)
+        querry = 'update books set status = "available" where book_id = %s'
+        result = cursor.execute(querry,(book_id,))
+        db.commit()
+        cursor.close()
+        db.close()
+        return result
+    def update_to_borrowed(self,book_id):
+        db.ping(reconnect=True)
+        cursor = db.cursor(dictionary=True,buffered=True)
+        querry = 'update books set status = "borrowed" where book_id = %s'
+        result = cursor.execute(querry,(book_id,))
+        db.commit()
+        cursor.close()
+        db.close()
+        return result
+    def book_available(self,book_id):
+        db.ping(reconnect=True)
+        cursor = db.cursor(dictionary=True,buffered=True)
+        querry = 'select * from books where status = "available" and book_id = %s'
+        cursor.execute(querry,(book_id,))
+        result = cursor.fetchone()
+        cursor.close()
+        return result
+    def book_borrowed(self,book_id):
+        db.ping(reconnect=True)
+        cursor = db.cursor(dictionary=True,buffered=True)
+        querry = 'select * from books where status = "borrowed" and book_id = %s'
+        cursor.execute(querry,(book_id,))
+        result = cursor.fetchone()
+        cursor.close()
+        return result

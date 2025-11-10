@@ -1,13 +1,12 @@
 {% extends "base.html" %}
 {% block head %}
-<meta http-equiv="refresh" content="20">
 {% endblock %}
 {% block body %}
-<br xmlns="http://www.w3.org/1999/html">
 <br>
 <br>
 <br>
-<h2 xmlns="http://www.w3.org/1999/html"><center>SIGN UP</center></h2>
+<br>
+<h2><center>SIGN UP</center></h2>
 <form action="{{ url_for('auth.signup') }}" method="POST" align="center">
     <b>Username:</b> <input type="text" name="username" placeholder="" style="width:150px;height:20px; border-radius:100px" autofocus required>
     <br>
