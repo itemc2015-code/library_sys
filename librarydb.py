@@ -69,11 +69,11 @@ class Operate(Users):
         return result
 
 class Actions(Operate):
-    def delete(self,id):
+    def delete(self,book_id):
         db.ping(reconnect=True)
         cursor = db.cursor(dictionary=True,buffered=True)
         querry = 'delete from books where book_id = %s'
-        result = cursor.execute(querry,(id,))
+        result = cursor.execute(querry,(book_id,))
         db.commit()
         cursor.close()
         db.close()

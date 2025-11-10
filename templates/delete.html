@@ -7,9 +7,10 @@
 <br>
 <br>
 <h2>
-    <center>Are you sure you want to delete?</center></h2>
+    <center>Are you sure you want to delete?</center>
+</h2>
 
-<form action="{{ url_for('action.delete',book_id=book_id) }}" method="POST" align="center">
+<form action="{{ url_for('action.actionhandling',book_id=book_id) }}" method="POST" align="center">
     <input type="submit" name="yes" value="Yes" style="width:120px;height:20px; border-radius:100px">
     <input type="submit" name="no" value="No" style="width:120px;height:20px; border-radius:100px">
 
