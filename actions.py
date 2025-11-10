@@ -18,8 +18,13 @@ def add():
     else:
         return render_template('add.html')
 
-@action.route('/delete')
-def delete():
-    return render_template('delete.html')
+@action.route('/handling/<int:book_id>',methods=['POST','GET'])
+def handling():
+    if 'update' in request.form:
+        return render_template('add.html')
+    elif 'delete':
+        return render_template('delete.html')
+
+
 
 

@@ -32,7 +32,12 @@
         <td>{{ v['title'] }}</td>
         <td align="center">{{ v['author'] }}</td>
         <td  align="center" style="background-color:{{ '#00CC99' if v['status'] == 'available' else '#8C92AC' }}{{endif}};">{{ v['status'] }}</td>
-        <td align="center"><input type="submit" name="update" value="UPDATE"> <input type="submit" name="delete" value="DELETE"></td>
+        <td align="center">
+            <form action="{{ url_for('action.handling') }}" method="get">
+            <input type="submit" name="update" value="UPDATE">
+            <input type="submit" name="delete" value="DELETE">
+            </form>
+        </td>
     </tr>
     {% endfor %}
     </tbody>
