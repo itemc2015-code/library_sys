@@ -23,6 +23,7 @@ def actionhandling(book_id):
         useractions = current_app.config['useraction']
         if request.method == 'GET':
             if 'delete' in request.args:
+
                 request.args.get('delete')
                 return render_template('delete.html',book_id=book_id)
             elif 'update' in request.args:
@@ -43,6 +44,7 @@ def update(book_id):
     if request.method == 'GET':
         if 'update' in request.args:
             return render_template('update.html',book_id=book_id)
+            # return redirect(url_for('action.update',book_id=book_id))
 
     if request.method == 'POST':
         if 'yes' in request.form:

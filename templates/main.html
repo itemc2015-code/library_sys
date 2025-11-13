@@ -8,13 +8,13 @@
 
 <center>
 <form action="{{ url_for('libsys') }}" method="GET" style="display:inline;">
-            <button type="submit" name="filter" value="allbooks" style="width:130px;height:40px; border-radius:100px;font-size:21px;">All Books</button>
-            <button type="submit" name="filter" value="available" style="width:130px;height:40px; border-radius:100px;font-size:21px;">Available</button>
-            <button type="submit" name="filter" value="borrowed" style="width:130px;height:40px; border-radius:100px;font-size:21px;">Borrowed</button>
+            <button type="submit" name="filter" value="allbooks" style="background-color:pink; width:130px;height:40px; border-radius:100px;font-size:21px;">All Books</button>
+            <button type="submit" name="filter" value="available" style="background-color:#00CC99; width:130px;height:40px; border-radius:100px;font-size:21px;">Available</button>
+            <button type="submit" name="filter" value="borrowed" style="background-color:#8C92AC; width:130px;height:40px; border-radius:100px;font-size:21px;">Borrowed</button>
 </form>
 
 <form action="{{ url_for('action.add') }}" method="POST" style="display:inline;">
-            <button type="submit" name="action" value="addbook" style="width:130px;height:40px; border-radius:100px;font-size:21px;">Add Book</button>
+            <button type="submit" name="action" value="addbook" style="background-color:skyblue; width:130px;height:40px; border-radius:100px;font-size:21px;">Add Book</button>
 </form><br><br>
 
 <table width="800" height="30" style="background-color:white" border="0">

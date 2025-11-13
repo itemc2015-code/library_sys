@@ -17,7 +17,8 @@ def libsys():
     user_session = session.get('username')
     if not user_session:
         flash('Invalid login, Login first', 'error')
-        return redirect(url_for('auth.login'))
+        # return redirect(url_for('auth.login'))
+        return render_template('login.html')
 
     useroperate = current_app.config['useroperate']
     status_type = request.args.get('filter')

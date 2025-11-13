@@ -13,15 +13,18 @@ def signup():
         existing = u_id.get_username(username)
         if existing:
             flash(f'{username} already exist','error')
-            return redirect(url_for('auth.signup'))
+            # return redirect(url_for('auth.signup'))
+            return render_template('signup.html')
         elif len(username) == 0 or len(password) == 0:
             flash('Username and Password cannot be empty', 'error')
-            return redirect(url_for('auth.signup'))
+            # return redirect(url_for('auth.signup'))
+            return render_template('signup.html')
         else:
             flash('Sign up successfully','success')
             password_hashed = generate_password_hash(password)
             u_id.sign_up(username,password_hashed)
-            return redirect(url_for('auth.signup'))
+            # return redirect(url_for('auth.signup'))
+            return render_template('signup.html')
     else:
         return render_template('sign.html')
 @auth.route('/',methods=['POST','GET'])
